@@ -12,8 +12,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 body {
 	--color-text: #fff;
 	--color-bg: #0e0e0f;
-	--color-link: #EE9A00;
-	--color-link-hover: #8e5c00;
+	--color-link: #abe801;
+	--color-link-hover: #fff;
 	color: var(--color-text);
 	background-color: var(--color-bg);
 	font-family: Futura, "futura-pt", Arial, sans-serif;
@@ -38,6 +38,10 @@ a:focus {
 	text-align: center;
 	position: relative;
 	z-index: 1000;
+}
+
+div.container {
+	position: fixed;
 }
 
 .frame__title {
@@ -87,8 +91,8 @@ a:focus {
 		grid-template-columns: 75% 25%;
 		grid-template-rows: auto auto auto;
 		grid-template-areas: 'title links'
-							'... ...'
-							'github demos';
+		'... ...'
+		'github demos';
 	}
 	.frame__title-wrap {
 		grid-area: title;
@@ -119,5 +123,349 @@ a:focus {
 	.content {
 		height: 100vh;
 		justify-content: center;
+	}
+}
+
+#typewriter {
+	position: absolute;
+	top: 45%;
+	left: 60%;
+}
+
+.comparison-slider {
+	position: relative;
+	width: 100%;
+	min-height: 55vw;
+	overflow: hidden;
+}
+
+.picture {
+	position: absolute;
+	width: 100vw;
+	min-height: 55vw;
+	overflow: hidden;
+}
+
+.picture__content-wrap {
+	position: absolute;
+	width: 100vw;
+	min-height: 55vw;
+}
+
+.picture__content {
+	position: absolute;
+	width: 25%;
+	top: 20%;
+	left: 35%;
+	right: 35%;
+	padding: 2.5%;
+	text-align: center;
+	z-index: 41;
+}
+.picture--before .picture__content {
+	background-color: rgba(34, 34, 34, 0.75);
+	color: #fff;
+}
+.picture--after .picture__content {
+	background-color: rgba(240, 248, 255, 0.75);
+	color: #222;
+}
+.picture img {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.comparison-slider h3 {
+	font-family: "Kaushan Script", cursive;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.picture--before h3 {
+	color: #fff;
+}
+.picture--after h3 {
+	color: #214569;
+}
+
+.comparison-slider p {
+	font-family: "Tangerine", cursive;
+	font-size: 8px;
+}
+
+.picture--before {
+	z-index: 1;
+}
+
+.stroke__text {
+	color: transparent;
+	text-align: center;
+	line-height: 1;
+	font-size: 2rem;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: white;
+}
+
+.handle {
+	position: absolute;
+	display: block;
+	top: 50%;
+	left: 50%;
+	height: 120%;
+	width: 2px;
+	background-color: #abe801;
+	transform: rotate(15deg) translateY(-50%);
+	transform-origin: top;
+	z-index: 3;
+}
+
+.picture--after {
+	transform: skew(-15deg);
+	margin-left: -2000px;
+	width: calc(50vw + 2000px);
+	z-index: 2;
+}
+
+.picture--after .picture__content-wrap {
+	transform: skew(15deg);
+	margin-left: 2000px;
+}
+
+#controlKit {
+	display: none;
+}
+
+.header-side:nth-child(1) {
+    width: 15.10416666vw;
+    min-width: 125px;
+}
+
+.header-side {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: proxima-nova,Arial Black,sans-serif;
+    font-size: .83333vw;
+    font-weight: 900;
+}
+
+.heading {
+    top: 13.0208334vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.corner {
+	position: fixed;
+    bottom: 2rem;
+    z-index: 999;
+    mix-blend-mode: difference;
+    right: 2rem;
+    letter-spacing: 0.2em;
+}
+
+.corner:nth-child(1) {
+	right: 3rem;
+}
+
+.corner:nth-child(2) {
+	margin-bottom: 2rem;
+	-webkit-writing-mode: vertical-lr;
+  	-ms-writing-mode: tb-lr;
+  	writing-mode: vertical-lr;
+  	text-orientation: upright;
+  	-webkit-font-feature-settings: "vkrn", "vpal";
+  	font-feature-settings: "vkrn", "vpal";
+}
+
+.view {
+    margin-top: 1.5625vw;
+    font-size: 0;
+}
+
+.view>svg {
+    width: 3.125vw;
+    min-width: 30px;
+}
+
+h1, ul {
+    font-size: 1.5625vw;
+    line-height: 1.5625vw;
+    letter-spacing: -.1vw;
+}
+
+.heading, .isDesktop .content-set, footer, header {
+    position: fixed;
+    left: 7.291667vw;
+    right: 7.291667vw;
+    z-index: 199;
+}
+header {
+    top: 5.208334vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999!important;
+}
+
+.corner__link a {
+	z-index: 999;
+}
+
+.header-line {
+    display: block;
+    width: 2.083333vw;
+    min-width: 20px;
+    height: .15625vw;
+    min-height: 1.5px;
+    background: white;
+}
+
+nav a {
+	margin-right: 0.5em;
+}
+
+@media (max-width: 768px) {
+	#typewriter {
+		position: initial;
+		text-align: center;
+		margin-top: 6rem !important;
+		margin: 0;
+	}
+}
+
+@media /* medium */ (min-width: 451px) {
+	.comparison-slider h3 {
+		font-size: 16px;
+	}
+	.comparison-slider p {
+		font-size: 10px;
+	}
+}
+
+@media /* large */ (min-width: 769px) {
+	.comparison-slider h3 {
+		font-size: 20px;
+	}
+	.comparison-slider p {
+		font-size: 34px;
+	}
+	.handle {
+		width: 3.5px;
+	}
+}
+
+@media /* extra-large */ (min-width: 1025px) {
+	.comparison-slider h3 {
+		font-size: 24px;
+	}
+	.comparison-slider p {
+		font-size: 34px;
+	}
+	.handle {
+		width: 5px;
+	}
+}
+
+@media (max-width: 320px) {
+	.heading, .isDesktop .content-set, footer, header {
+    	left: 20px;
+    	right: 20px;
+	}
+}
+@media screen and (max-width: 540px), screen and (max-height: 540px) {
+	header {
+    	top: 30px;
+	}
+}
+
+@media (max-width: 425px) {
+	.heading {
+		position: relative;
+    	top: 95px !important;
+	}
+	.heading .stroke__text {
+		text-align: initial;
+    	font-size: 1.5rem;
+    	padding-right: 1em;
+	}
+}
+
+@media (max-width: 960px)
+{
+	header {
+    	top: 50px;
+	}
+	.logo {
+    	font-size: 10px;
+	}
+}
+
+@media (max-width: 320px)
+{
+	.view {
+	    margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 540px), screen and (max-height: 540px)
+{
+	.view {
+	    margin-top: 12px;
+	}
+}
+@media (max-width: 960px)
+{
+	.view {
+	    margin-top: 17px;
+	}
+}
+
+@media (max-width: 320px)
+{
+	.heading, .isDesktop .content-set, footer, header {
+		left: 20px;
+	    right: 20px;
+	}
+}
+@media screen and (max-width: 540px), screen and (max-height: 540px)
+{
+	.heading {
+	    top: 95px;
+	}
+}
+
+@media (max-width: 960px)
+{
+	.heading {
+	    top: 125px;
+	}
+}
+
+@media (max-width: 320px)
+{
+	h1, ul {
+	    font-size: 15px;
+	    line-height: 14px;
+	}
+}
+
+@media screen and (max-width: 540px), screen and (max-height: 540px)
+{
+	h1 {
+	    font-size: 16px;
+	    line-height: 16px;
+	}
+}
+@media (max-width: 960px)
+{
+	h1, ul {
+	    font-size: 17px;
+	    line-height: 18px;
 	}
 }

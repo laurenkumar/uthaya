@@ -37,7 +37,7 @@ void main() {
 
 	// pixel color
 	vec4 colA = texture2D(uTexture, puv);
-	float grey = colA.r * 0.21 + colA.g * 0.71 + colA.b * 0.07;
+	float grey = colA.r * 0.60 + colA.g * 0.50 + colA.b * 0.07;
 
 	// displacement
 	vec3 displaced = offset;
@@ -55,8 +55,8 @@ void main() {
 	displaced.y += sin(angle) * t * 20.0 * rndz;
 
 	// particle size
-	float psize = (snoise_1_2(vec2(uTime, pindex) * 0.5) + 2.0);
-	psize *= max(grey, 0.2);
+	float psize = (snoise_1_2(vec2(uTime, pindex) * 0.2) + 2.0);
+	psize *= max(grey, 0.9);
 	psize *= uSize;
 
 	// final position

@@ -1,5 +1,7 @@
 import WebGLView from './webgl/WebGLView';
 import GUIView from './gui/GUIView';
+import * as jQuery from "jquery";
+import fullpage from 'fullpage.js';
 
 export default class App {
 
@@ -29,9 +31,15 @@ export default class App {
 
 		window.addEventListener('resize', this.resize.bind(this));
 		window.addEventListener('keyup', this.keyup.bind(this));
-		
+
 		const el = this.webgl.renderer.domElement;
 		el.addEventListener('click', this.click.bind(this));
+
+		new fullpage('#fullpage', {
+			autoScrolling:true,
+		});
+
+		fullpage_api.setAllowScrolling(false);
 	}
 
 	animate() {
