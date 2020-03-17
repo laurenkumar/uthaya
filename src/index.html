@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="fr" class="no-js">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Interactive Particles | Codrops</title>
+	<title>Uthaya</title>
 	<meta name="description" content="Demo of a tutorial on how to draw a large number of particles with Three.js and make them interactive." />
 	<meta name="keywords" content="three.js, tutorial, particles, interactive, javascript, webgl" />
 	<meta name="author" content="Bruno Imbrizi for Codrops" />
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
-	<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+	<link rel="stylesheet" type="css" href="css/demo1.css" />
 	<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 </head>
 <body class="demo-1">
+	<svg class="hidden">
+		<defs>
+			<filter id="blur2" x="-0%" y="-0%" width="100%" height="100%">
+				<feGaussianBlur in="SourceAlpha" stdDeviation="0" result="glow" data-min-deviation="0" data-max-deviation="30"/>
+				<feColorMatrix result="bluralpha" type="matrix" values="1 1 1 1 0 1 1 0 0 1 0 0 -1 0 1 0 0 0 1.2 0 "/>
+				<feOffset in="bluralpha" dx="0.000000" dy="0.000000" result="offsetBlur"/>
+				<feMerge>
+					<feMergeNode in="offsetBlur"/>
+					<feMergeNode in="SourceGraphic"/>
+				</feMerge>
+			</filter>
+		</defs>
+	</svg>
 	<header>
 		<div class="header-side">
-			<a href="/" class="logo" rel="noopener">
+			<a href="#home" class="logo dynamic-link" rel="noopener">
 				<div style="position:relative;display:inline-block;" class="SplitClass">Uthaya</div> <br>
 			</a>
 			<span class="header-line">
@@ -24,40 +37,270 @@
 		</div>
 		<div class="header-side">
 			<nav>
-				<a href="cours-de-tamoul" class="header-link dynamic-link _moveTo" data-href="about" rel="prefetch">Cours</a>
-				<a href="cours-de-tamoul" class="header-link dynamic-link _moveTo" data-href="about" rel="prefetch">Interprètation</a>
+				<a href="#cours" class="header-link dynamic-link _moveTo" data-href="cours" rel="prefetch">Cours</a>
+				<a href="#interpretation" class="header-link dynamic-link _moveTo" data-href="interpretation" rel="prefetch">Interprètation</a>
 			</nav>
 		</div>
 
 	</header>
 
 	<div class="corner__link">
-		<a href="cours-de-tamoul" class="header-link corner dynamic-link _moveTo" data-href="about" rel="prefetch">Ateliers</a>
-		<a href="cours-de-tamoul" class="header-link corner dynamic-link _moveTo" data-href="about" rel="prefetch">Boutique</a>
+		<a href="#ateliers" class="header-link corner dynamic-link _moveTo" data-href="ateliers" rel="prefetch">Ateliers</a>
+		<a href="#boutique" class="header-link corner dynamic-link _moveTo" data-href="boutique" rel="prefetch">Boutique</a>
 	</div>
 
-	<div id="fullpage">
-		<div class="section">
+	<div id="pt-main" class="pt-perspective">
+		<div class="feature pt-page-1" data-anchor="home" id="home" data-step="a">
 			<div class="heading">
 				<div class="head-side">
-					<h1 class="stroke__text">Ecole de langue <br>&amp; culture tamoule </h4>
-						<a href="presentation.html" class="view _moveTo" data-href="a-propos" rel="prefetch"> Voir 
-							<svg class="_arrow" aria-hidden="true" focusable="false" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-								<path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z">
-								</path>
-							</svg>
-						</a>
-					</div>
+					<a href="#presentation" class="view dynamic-link _moveTo" data-href="a-propos" rel="prefetch"> 
+						<h1 class="stroke__text">Ecole de langue <br>&amp; culture tamoule </h1>
+						<svg class="_arrow" aria-hidden="true" focusable="false" data-icon="long-arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<path fill="currentColor" d="M311.03 131.515l-7.071 7.07c-4.686 4.686-4.686 12.284 0 16.971L387.887 239H12c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h375.887l-83.928 83.444c-4.686 4.686-4.686 12.284 0 16.971l7.071 7.07c4.686 4.686 12.284 4.686 16.97 0l116.485-116c4.686-4.686 4.686-12.284 0-16.971L328 131.515c-4.686-4.687-12.284-4.687-16.97 0z">
+							</path>
+						</svg>
+					</a>
 				</div>
-
-				<div class="container"></div>
 			</div>
 
-			<div clss="section"></div>
+			<div class="container"></div>
+		</div>
+		<div class="feature hide pt-page-2" data-anchor="presentation" id="presentation" data-step="b">
+			<div id="container">
+				<div class="align" style="margin-bottom: 2rem;">
+					<h2 style="text-align: initial;" class="stroke__text">Bonjour, je m'appelle Sopika</h2>
+				</div>
+				<img src="images/me.png" style="float: left;">
+				<h3>Je suis consultante & formatrice en informatique | Interprète & Professeur de tamoul</h3>
+				<p>Diplômée en Master Informatique, je travaille en tant que consultante et enseignante en informatique et également traductrice et interprète (tamoul-français).<br>
+					J'ai décidé de créer cette école pour partager la culture tamoule et mes connaissances de la langue. <br>
+				J'offre donc des services d'interprétation et traduction, des cours pour apprendre à parler mais aussi des ateliers de danse traditionnelle.</p>
+				<div class="svg" style="margin-top: 2rem;">
+					<a class="header-link" href="mailto:sopika16@hotmail.fr" rel="author">
+						<svg class="svgtext" data-filter-type="blur" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1000 200">
+							<path id="text-curve11" d="M 0 100 Q 250 0 500 100 Q 750 200 1000 100" fill="none"/>
+							<text filter="url(#blur2)">
+								<textPath href="#text-curve11">
+									Vous avez besoin de traduction ou d'une interprète ? Contactez moi ! Cliquez ici ou sur "Contact"
+								</textPath>
+							</text>
+						</svg>
+					</a>
+				</div>
+				<p>J'ai participé à la création du livre "Apprenons le Tamoul" avec les associations <a href="http://tyofrance.fr" target="_blank">TYO</a> et <a href="http://respectdesoi.org" target="_blank">Respect de Soi</a>, destiné aux débutants. Ce livre de 12 chapitres, contient le vocabulaire et quelques expressions nécessaires pour la vie de tous les jours, pour enfants et adultes. C'est un livre ludique adaptant une certaine pédagogie afin que quiconque puisse apprendre de lui même cette langue.</p>
+				<p>Disponible en PDF sur demande au prix de 12 euros qui seront reversés aux associations.</p>
+				<p>Je mets aussi en vente mes cours qui ont permis à mes étudiants de poursuivre leurs apprentissage de la langue.</p>
+				<p>Retrouvez tous les cours et livres en ventes dans la partie <a href="#boutique" title="boutique">Boutique</a></p>
+
+
+			</div>
+			
 		</div>
 
+	</div>
+	<div class="feature hide pt-page-3" data-anchor="cours" id="cours" data-step="c">
+		<div class="">
+			<div>
+				<h2 class="stroke__text">Cours de tamoul par une prof. diplômée en Littérature Tamoul</h2>
+			</div>
+			<div>
+				<h3>Je donne des cours de soutien scolaire et tamoul depuis 2009 à des personnes de tous les horizons.</h3>
 
-		<noscript><div class="noscript">Veuillez activer Javascript pour le bon fonctionnement du site</div></noscript>
+				Passant de la grammaire à la syntaxe, aux diverses expressions, vocabulaires, préparation aux examens. Ces cours complets seront s'adapter à vos besoins quels qu'ils soient, de part une méthodologie d'apprentissage adaptive et qui s'est prouver être efficace sur mes élèves.
+				<br>
+				Je vous propose de vous aider à améliorer votre tamoul qu'importe votre niveau mais aussi de vous accompagner en ce qui concerne vos objectifs personnels et professionnels.
+				<br>
+				En 2012/2013, j'ai eu l'occasion d'enseigner à l'association PTEC dans Paris 11e pour des élèves de la moyenne section à la 4e. Mes missions étaient de préparer les jeunes aux examens et également de leur enseigner la culture tamoule (danse, théâtre, musique).
+				<br>
+				En 2015, une de mes élèves (de cours particulier) a participé à l'examen d'ITEC et elle a eu 54%. Ce fut un grand succès pour elle et moi!
+			</div>
+			<div>
+				<h3>Déroulement du cours:</h3>
+				<ul>
+					<li>Première séance pour faire connaissance, d'évaluer votre niveau en tamoul et analyser vos objectifs.</li>
+					<li>En fonction de vos objectifs, nous établissons une méthode de travail qui consistera à utiliser mes propres supports de cours et/ou d'autres supports complémentaires selon votre niveau.</li>
+					<li>Si vous avez des objectifs professionnels, je peux à la fois créer des cours et supports sur-mesure.</li>
+					<li>Pour les enfants, j'emprunte une méthodologie ludique qui consiste à utiliser le jeu/théâtre comme médium d'apprentissage.</li>
+					<li>Si besoin, nous reverrons notre méthode de travail afin de mieux s'adapter à votre capacité d'apprentissage.</li>
+				</ul>
+			</div>
+			<div>
+				<h3>Mes disponibilités à convenir ensemble:</h3>
+				<ul>
+					<li>Lundi, Mercredi, Vendredi: A partir de 18h30 (Paris 13 & 18 de préférence)</li>
+					<li>Mardi: A partir de 18h30 jusqu'à 21h (uniquement dans le 13e)</li>
+					<li>Jeudi: A partir de 21h (uniquement dans le 13e ou par skype)</li>
+					<li>Samedi et Dimanche: Toute la journée</li>
+				</ul>
+				Je suis disponible sur Paris & Lyon selon les dates.
+				<br>
+				<a class="header-link" href="mailto:sopika16@hotmail.fr" rel="author">Envoyez-moi un message</a> pour m'expliquer votre projet.
+				<p>A bientôt!</p>
+			</div>
+		</div>
+	</div>
+	<div class="feature hide pt-page-4" id="interpretation" data-anchor="interpretation" data-step="d">
+		<div class="wrap">
+			<div class="new">
+				<h2 class="stroke__text">Traduction &amp; Interpretation tamoul / français</h2>
+				<p>
+					Etant diplômée Higher Certificate (level 3) en littérature Tamoul de l'université Thanjavur (Inde), je suis actuellement en cours de préparation pour l'équivalence du Licence Tamoul.
 
-	</body>
-	</html>
+					Depuis mon arrivée en France, j'ai régulierement du traduire des documents mais aussi réaliser des interprétations.
+				</p>
+				<p>
+					Ayant eu diverses expèriences en tant qu'interprète lors de formations de l'Office Français de l'Immigration et de l'Intégration et pour de nombreux particuliers; notamment des rendez vous dans une banque ou la traduction de lettres tamoul-français et vice-versa; Je me tiens donc à disposition pour diverses services qui requièrent une interprétation.<br>
+
+					Besoin d'une traduction ou d'une interprétation ? N'hesitez pas à me <a href="mailto:sopika16@hotmail.fr">contacter</a>	
+				</p>
+			</div>
+			<div class="old">
+				<h2 class="stroke__text">Moḻipeyarppu maṟṟum viḷakkam tamiḻ/ pirañcu</h2>
+				<p>
+					Tañcāvūr palkalaikkaḻakattil (intiyā) tamiḻ ilakkiyattil uyar cāṉṟitaḻ (nilai 3) eṉṟa vakaiyil, taṟpōtu tamiḻ urimattiṉ camanilaikku nāṉ tayārāki varukiṟēṉ. Nāṉ pirāṉcukku vantatiliruntu, nāṉ vaḻakkamāka āvaṇaṅkaḷai moḻipeyarkkiṟēṉ, āṉāl viḷakkaṅkaḷaiyum ceykiṟēṉ.
+				</p>
+				<p>
+					Kuṭivaravu maṟṟum oruṅkiṇaippukkāṉa pireñcu aluvalakattil payiṟciyiṉpōtu maṟṟum pala taṉinaparkaḷukkāṉa moḻipeyarppāḷarāka palvēṟu aṉupavaṅkaḷaip peṟṟavar; oru vaṅkiyil kuṟippāka kūṭṭaṅkaḷil allatu tamiḻ-pirañcu kaṭitaṅkaḷiṉ moḻipeyarppu maṟṟum nērmāṟāka; eṉavē viḷakkam tēvaippaṭum palvēṟu cēvaikaḷukku nāṉ kiṭaikkiṟēṉ.
+					Moḻipeyarppu allatu viḷakkam vēṇṭumā? 
+					<a href="mailto:sopika16@hotmail.fr">Eṉṉai toṭarpu koḷḷa tayaṅka vēṇṭāmcontacter</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="feature hide pt-page-5" id="ateliers" data-step="e">
+		<div class="under_feature">
+			<div class="feature-inner">
+				<div class="feature-copy">
+					<h2 class="feature-headline">Arc Rae</h2>
+					<h3 class="feature-subheadline">Sacred Ground</h3>
+					<p class="feature-text"><a href="#">Pre-order</a> the new cassette. Orders ship this Tuesday.</p>
+				</div>
+				<div class="feature-image-container"><img class="feature-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/225363/cassette-1.jpeg" alt="Arc Rae cassette tape"/></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="feature hide pt-page-6" data-anchor="boutique" id="boutique" data-step="f">
+		<div class="component">
+			<ul class="align2">
+				<!-- Book 1 -->
+				<li>
+					<figure class='book'>        
+						<!-- Front -->        
+						<ul class='hardcover_front'>
+							<li>
+								<img src="" alt="" width="100%" height="100%">
+								<span class="ribbon bestseller">Nº1</span>
+							</li>
+							<li></li>
+						</ul>        
+						<!-- Pages -->        
+						<ul class='page'>
+							<li></li>
+							<li>
+								<a class="btn" href="#">Download</a>
+							</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>        
+						<!-- Back -->        
+						<ul class='hardcover_back'>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul class='book_spine'>
+							<li></li>
+							<li></li>
+						</ul>
+						<figcaption>
+							<h1>Responsive Web Design</h1>
+							<span>By Ethan Marcotte</span>
+							<p>From mobile browsers to netbooks and tablets, users are visiting your sites from an increasing array of devices and browsers. Are your designs ready?...</p>
+						</figcaption>
+					</figure>
+				</li>  
+				<!-- Book 2 -->
+				<li>
+					<figure class='book'>        
+						<!-- Front -->        
+						<ul class='hardcover_front'>
+							<li>
+								<img src="https://s.cdpn.io/13060/book2.jpg" alt="" width="100%" height="100%">
+								<span class="ribbon new">NEW</span>
+							</li>
+							<li></li>
+						</ul>        
+						<!-- Pages -->        
+						<ul class='page'>
+							<li></li>
+							<li>
+								<a class="btn" href="#">Download</a>
+							</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>        
+						<!-- Back -->        
+						<ul class='hardcover_back'>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul class='book_spine'>
+							<li></li>
+							<li></li>
+						</ul>
+						<figcaption>
+							<h1>Mobile First</h1>
+							<span>By Luke Wroblewski</span>
+							<p>Our industry’s long wait for the complete, strategic guide to mobile web design is finally over. Former Yahoo! design architect and co-creator of Bagcheck Luke Wroblewski knows more about mobile experience than the rest of us...</p>
+						</figcaption>
+					</figure>
+				</li>  
+				<!-- Book 3 -->
+				<li>
+					<figure class='book'>       
+						<!-- Front -->        
+						<ul class='hardcover_front'>
+							<li>
+								<img src="https://s.cdpn.io/13060/book3.jpg" alt="" width="100%" height="100%">
+							</li>
+							<li></li>
+						</ul>        
+						<!-- Pages -->        
+						<ul class='page'>
+							<li></li>
+							<li>
+								<a class="btn" href="#">Download</a>
+							</li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>        
+						<!-- Back -->        
+						<ul class='hardcover_back'>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul class='book_spine'>
+							<li></li>
+							<li></li>
+						</ul>
+						<figcaption>
+							<h1>Adaptive Web Desgn</h1>
+							<span>By Aaron Gustafson</span>
+							<p>The web is an ever-changing medium whose scope, application, audience and platform continue to grow on a daily basis. If you’ve worked on the web for any amount of time, you’ve likely heard or even used the term “progressive enhancement.”...</p>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>  
+		</div>
+	</div>
+</section>
+
+</div>
+
+<noscript><div class="noscript">Veuillez activer Javascript pour le bon fonctionnement du site</div></noscript>
+
+</body>
+</html>

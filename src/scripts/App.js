@@ -1,7 +1,8 @@
 import WebGLView from './webgl/WebGLView';
 import GUIView from './gui/GUIView';
-import * as jQuery from "jquery";
-import fullpage from 'fullpage.js';
+import "intersection-observer";
+import TextOnPath from "./utils/textOnPath";
+
 
 export default class App {
 
@@ -35,11 +36,19 @@ export default class App {
 		const el = this.webgl.renderer.domElement;
 		el.addEventListener('click', this.click.bind(this));
 
-		new fullpage('#fullpage', {
-			autoScrolling:true,
+		const toogleLinks = document.querySelectorAll('.dynamic-link');
+		const toogleBlocks = document.querySelectorAll('.feature');
+
+		Array.from(toogleLinks).forEach(link => {
+		    link.addEventListener('click', function(event) {
+		    	Array.from(toogleBlocks).forEach(item => item.classList.add('hide'));
+		        const target = this.getAttribute('href');
+		        document.querySelector(target).classList.remove('hide');
+		    }, false);
 		});
 
-		fullpage_api.setAllowScrolling(false);
+		[...document.querySelectorAll('svg.svgtext')].forEach(el => new TextOnPath(el));
+
 	}
 
 	animate() {

@@ -26,9 +26,16 @@
     "fullpage.js": "^3.0.8",
     "glsl-noise": "0.0.0",
     "gsap": "^2.0.2",
+    "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
+    "jquery-bridget": "^2.0.1",
+    "jquery-ui": "^1.12.1",
+    "jsdom": "^16.0.1",
+    "sal.js": "^0.7.3",
+    "scrollama": "^2.2.0",
     "stats.js": "^0.17.0",
-    "three": "^0.98.0"
+    "three": "^0.98.0",
+    "webpack-jquery-ui": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.52",

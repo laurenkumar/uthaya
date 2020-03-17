@@ -36,7 +36,6 @@ module.exports = {
 				test: /three\/examples\/js/,
 				use: 'imports-loader?THREE=three'
 			},
-			/*
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader']
@@ -49,7 +48,6 @@ module.exports = {
 				test: /\.(jpe?g|png|gif)$/i,
 				use: 'file-loader'
 			}
-			*/
 		]
 	},
 	resolve: {
@@ -58,6 +56,10 @@ module.exports = {
 		}
 	},
 	plugins: [
+		new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+        }),
 		new CleanWebpackPlugin(
 			['dist'],
 			{ root: __root },

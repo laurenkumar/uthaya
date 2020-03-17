@@ -1,4 +1,3 @@
-import * as jQuery from "jquery";
 /*!
 * Customized version of iScroll.js 0.0.5
 * It fixes bugs affecting its integration with fullpage.js
