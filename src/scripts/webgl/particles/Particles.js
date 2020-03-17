@@ -48,6 +48,7 @@ export default class Particles {
 			const ctx = canvas.getContext('2d');
 
 			canvas.width = this.width;
+			console.log(this.width)
 			canvas.height = this.height;
 			ctx.scale(1, -1);
 			ctx.drawImage(img, 0, 0, this.width, this.height * -1);
