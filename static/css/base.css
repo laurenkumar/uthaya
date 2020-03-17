@@ -705,6 +705,7 @@ nav a:not(:last-child) {
     	padding-right: 1em;
 	}
 	.container canvas {
+		max-width: 100%;
 		max-height: 26em !important;
 	}
 }
