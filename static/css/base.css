@@ -708,7 +708,7 @@ nav a:not(:last-child) {
 	}
 	.container canvas {
 		max-width: 100%;
-		max-height: 26em !important;
+		max-height: 30em !important;
 	}
 }
 
