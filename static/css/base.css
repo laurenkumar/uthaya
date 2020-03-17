@@ -347,8 +347,7 @@ div.scroll__container ul li {
 /******** interpretation *******/
 
 .new, .old {
-	background-color: white;
-	color: black;
+	color: white;
 }
 
 .new .stroke__text, .old .stroke__text {
@@ -377,9 +376,7 @@ div.wrap {
 }
 
 .old, .new {
-	overflow: scroll;
 	padding: 0.5rem;
-	height: 24rem;
 	position: absolute;
     transition: opacity 0.5s linear;
 }
