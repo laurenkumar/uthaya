@@ -698,6 +698,8 @@ nav a:not(:last-child) {
 	.heading {
 		position: relative;
     	top: 95px !important;
+    	left: 0;
+    	padding-left: 7vw;
 	}
 	.heading .stroke__text {
 		text-align: initial;
