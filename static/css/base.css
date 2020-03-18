@@ -4154,14 +4154,17 @@ nav a:not(:last-child) {
 .item-a {
   grid-column-start: 1;
   grid-column-end: 5;
+  border-top: 1px solid var(--color-link);
+  border-left: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
 }
 
 .item-b {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-top: 1px solid #000;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
+  border-top: 1px solid var(--color-link);
+  border-left: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
 }
 
 .item-c {
@@ -4214,6 +4217,21 @@ nav a:not(:last-child) {
   grid-column-end: span 4;
   border-left: 1px solid var(--color-link);
   border-top: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
+}
+
+.item-k {
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  border-left: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
+}
+
+.item-l {
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  border-left: 1px solid var(--color-link);
   border-bottom: 1px solid var(--color-link);
   border-right: 1px solid var(--color-link);
 }
