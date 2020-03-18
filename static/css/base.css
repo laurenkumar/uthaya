@@ -4167,55 +4167,55 @@ nav a:not(:last-child) {
 .item-c {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border: 1px solid #000;
+  border: 1px solid var(--color-link);
 }
 
 .item-d {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-left: 1px solid #000;
-  border-bottom: 1px solid #000;
-  border-right: 1px solid #000;
+  border-left: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
 }
 
 .item-e {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-bottom: 1px solid #000;
-  border-right: 1px solid #000;
-  border-left: 1px solid #000;
+  border-bottom: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
+  border-left: 1px solid var(--color-link);
 }
 
 .item-f {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-left: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-link);
 }
 
 .item-g {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-left: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-link);
 }
 
 .item-h {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-left: 1px solid #000;
-  border-right: 1px solid #000;
+  border-left: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
 }
 
 .item-i {
   grid-column-start: 1;
   grid-column-end: span 4;
-  border-left: 1px solid #000;
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
-  border-right: 1px solid #000;
+  border-left: 1px solid var(--color-link);
+  border-top: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-link);
+  border-right: 1px solid var(--color-link);
 }
 
 .item-j {
@@ -4226,7 +4226,7 @@ nav a:not(:last-child) {
 }
 
 .border-interrupt {
-  background-color: #FFFF63;
+  background-color: var(--color-link);
 }
 
 .playfair {
@@ -4237,13 +4237,34 @@ nav a:not(:last-child) {
   font-family: 'Lora', serif;
 }
 
+.i {
+	color: var(--color-link);
+}
+
+.item:hover .i {
+	color: white;
+}
+
 .f8 {
   font-size: .78rem;
 }
 
+.slogan {
+	width: 101%;
+}
+
+strong {
+	color: var(--color-link);
+}
+
+.slogan p span {
+	padding: 10px;
+	color: black;
+}
+
 .item:hover {
   background-color: #222;
-  color: #FFFF63;
+  color: var(--color-link);
   transition: all 0.25s ease;
 }
 
@@ -4257,6 +4278,8 @@ nav a:not(:last-child) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 150px
+      127px
+      127px
       127px
       127px
       127px
@@ -4286,9 +4309,9 @@ nav a:not(:last-child) {
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 6;
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-top: 1px solid var(--color-link);
+    border-left: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
     border-right: none;
   }
 
@@ -4297,7 +4320,7 @@ nav a:not(:last-child) {
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 7;
-    border: 1px solid #000;
+    border: 1px solid var(--color-link);
   }
 
   .item-d {
@@ -4305,9 +4328,9 @@ nav a:not(:last-child) {
     grid-column-end: 2;
     grid-row-start: 6;
     grid-row-end: 8;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-right: 1px solid #000;
+    border-left: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
+    border-right: 1px solid var(--color-link);
   }
 
   .item-e {
@@ -4317,7 +4340,7 @@ nav a:not(:last-child) {
     grid-row-end: 8;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--color-link);
   }
 
   .item-f {
@@ -4325,7 +4348,7 @@ nav a:not(:last-child) {
     grid-column-end: 4;
     grid-row-start: 7;
     grid-row-end: 9;
-    border-left: 1px solid #000;
+    border-left: 1px solid var(--color-link);
     border-bottom: none;
     border-right: none;
   }
@@ -4335,9 +4358,9 @@ nav a:not(:last-child) {
     grid-column-end: 5;
     grid-row-start: 7;
     grid-row-end: 11;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-left: 1px solid var(--color-link);
+    border-right: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
   }
 
   .item-h {
@@ -4345,8 +4368,8 @@ nav a:not(:last-child) {
     grid-column-end: 3;
     grid-row-start: 8;
     grid-row-end: 11;
-    border-left: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-left: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
     border-right: none;
   }
 
@@ -4355,10 +4378,20 @@ nav a:not(:last-child) {
     grid-column-end: 4;
     grid-row-start: 9;
     grid-row-end: 11;
-    border-left: 1px solid #000;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
+    border-left: 1px solid var(--color-link);
+    border-top: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
     border-right: none;
+  }
+
+  .item-l {
+  	grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 11;
+    grid-row-end: 13;
+    border-left: 1px solid var(--color-link);
+    border-right: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
   }
 
   .item-j {
@@ -4366,6 +4399,15 @@ nav a:not(:last-child) {
     grid-column-end: 4;
     grid-row-start: 3;
     grid-row-end: 5;
+  }
+
+  .item-k {
+  	grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 11;
+    grid-row-end: 13;
+    border-right: 1px solid var(--color-link);
+    border-bottom: 1px solid var(--color-link);
   }
 
   .mobile-message {
