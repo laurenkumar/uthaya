@@ -18,13 +18,13 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 
 app.get('/', (req, res) => {
-  res.render('index', {
+  res.send('index', {
     stripePublishableKey: keys.stripePublishableKey
   });
 });
 
 app.post('/charge', (req, res) => {
-  const amount = 3;
+  const amount = 300;
   
   stripe.customers.create({
     email: req.body.stripeEmail,
