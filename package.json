@@ -16,13 +16,15 @@
   "sideEffects": false,
   "scripts": {
     "server": "node server.js",
-    "build": "webpack -p --config config/prod.js",
-    "start": "webpack-dev-server --config config/dev.js"
+    "build": "node server.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@brunoimbrizi/controlkit": "^0.1.93",
+    "body-parser": "^1.19.0",
     "browser-detect": "^0.2.28",
     "domready": "^1.0.8",
+    "express-handlebars": "^3.1.0",
     "fsevents": "^2.1.2",
     "fullpage.js": "^3.0.8",
     "glsl-noise": "0.0.0",
@@ -35,6 +37,7 @@
     "sal.js": "^0.7.3",
     "scrollama": "^2.2.0",
     "stats.js": "^0.17.0",
+    "stripe": "^5.1.1",
     "three": "^0.98.0",
     "webpack-jquery-ui": "^2.0.1"
   },
