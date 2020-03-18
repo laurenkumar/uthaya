@@ -7,10 +7,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const __root = path.resolve(__dirname, '../');
 
 module.exports = {
+	devServer: {
+	    disableHostCheck: true,
+	    host: '0.0.0.0',
+	    port: 8081
+	},
 	entry: {
 		index: ['@babel/polyfill', './src/scripts/index.js'],
 	},
 	output: {
+		publicPath: '/',
 		path: path.resolve(__root, 'dist'),
 		filename: 'scripts/[name].[chunkhash].js',
 		chunkFilename: 'scripts/[name].[chunkhash].js',
