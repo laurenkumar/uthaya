@@ -4154,9 +4154,6 @@ nav a:not(:last-child) {
 .item-a {
   grid-column-start: 1;
   grid-column-end: 5;
-  border-top: 1px solid var(--color-link);
-  border-left: 1px solid var(--color-link);
-  border-right: 1px solid var(--color-link);
 }
 
 .item-b {
@@ -4217,6 +4214,7 @@ nav a:not(:last-child) {
   grid-column-end: span 4;
   border-left: 1px solid var(--color-link);
   border-top: 1px solid var(--color-link);
+  border-bottom: 1px solid var(--color-link);
   border-right: 1px solid var(--color-link);
 }
 
