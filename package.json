@@ -15,14 +15,14 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "server": "node server.js",
-    "build": "node server.js",
-    "start": "node server.js"
+    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./config/common.js --progress",
+    "start": "node server"
   },
   "dependencies": {
     "@brunoimbrizi/controlkit": "^0.1.93",
     "body-parser": "^1.19.0",
     "browser-detect": "^0.2.28",
+    "cross-env": "^1.0.7",
     "domready": "^1.0.8",
     "express-handlebars": "^3.1.0",
     "fsevents": "^2.1.2",
@@ -36,6 +36,7 @@
     "jsdom": "^16.2.1",
     "sal.js": "^0.7.3",
     "scrollama": "^2.2.0",
+    "rimraf": "^2.4.3",
     "stats.js": "^0.17.0",
     "stripe": "^5.1.1",
     "three": "^0.98.0",
@@ -57,11 +58,14 @@
     "glslify-loader": "^1.0.2",
     "html-webpack-plugin": "^3.2.0",
     "imports-loader": "^0.8.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.1.3"
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^4.1.3",
+    "webpack-node-externals": "^1.7.2"
   }
 }

@@ -3,10 +3,26 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Uthaya</title>
-	<meta name="description" content="Demo of a tutorial on how to draw a large number of particles with Three.js and make them interactive." />
-	<meta name="keywords" content="three.js, tutorial, particles, interactive, javascript, webgl" />
-	<meta name="author" content="Bruno Imbrizi for Codrops" />
+	<title>Uthaya - Culture Tamoule - Cours de tamoul</title>
+	<meta name="description" lang="fr" content="Uthaya - Paris/Lyon : Sophika Uthayakumar - Cours de tamoul par une prof. diplômée en Littérature Tamoul. Traduction et intépretation tamoul-français. Ateliers de danse et théatre. Vous voulez apprendre le tamoul ? Contactez moi !">
+	<link rel="apple-touch-icon" href="//cdn.superprof.com/style/images/favicon/s_rose_76.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="//cdn.superprof.com/style/images/favicon/s_rose_76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="//cdn.superprof.com/style/images/favicon/s_rose_120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="//cdn.superprof.com/style/images/favicon/s_rose_152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="//cdn.superprof.com/style/images/favicon/s_rose_180.png">
+	<link rel="icon" sizes="192x192" href="//cdn.superprof.com/style/images/favicon/s_rose_192.png">
+	<link rel="shortcut icon" sizes="76x76" type="image/x-icon" href="//cdn.superprof.com/style/images/favicon/s_rose_76.ico">
+	<link rel="mask-icon" href="//cdn.superprof.com/style/images/favicon/s_rose.svg" color="#FF5A5F">
+
+	<meta name="robots" content="index, follow">
+	<meta prefix="og: http://ogp.me/ns#" property="og:type" content="website">
+	<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Uthaya - Paris/Lyon : Sophika Uthayakumar - Cours de tamoul par une prof. diplômée en Littérature Tamoul. Traduction et intépretation tamoul-français. Ateliers de danse et théatre. Vous voulez apprendre le tamoul ? Contactez moi !">
+	<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://www.superprof.fr/images/annonces/professeur-home-cours-initiation-informatique-cours-tamoul-prof-diplomee-litterature-tamoul-vocabulaire-grammaire-expressions.jpg">
+	<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Uthaya">
+	<meta prefix="og: http://ogp.me/ns#" property="og:description" content="Uthaya - Paris/Lyon : Sophika Uthayakumar - Cours de tamoul par une prof. diplômée en Littérature Tamoul. Traduction et intépretation tamoul-français. Ateliers de danse et théatre. Vous voulez apprendre le tamoul ? Contactez moi !">
+
+	<meta name="keywords" content="tamoul, culture tamoule, apprendre, traduction, interpretation, cours tamoul" />
+	<meta name="author" content="Sopika Uthayakumar" />
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
 	<link rel="stylesheet" type="css" href="css/demo1.css" />
@@ -181,111 +197,111 @@
 	</div>
 
 	<div class="feature hide pt-page-6" data-anchor="boutique" id="boutique" data-step="f">
-		
-		<div class="boutique">
-			<div class="grid">
-				<form action="/charge" method="POST">
-					<script
-					src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="{{stripePublishableKey}}"
-					data-amount="300"
-					data-name="Cours de tamoul"
-					data-description="Cours de Sopika Uthayakumar"
-					data-locale="auto">
-				</script>
-				<script>
+		<form action="/charge" method="POST">
+			<script
+			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			data-key="{{stripePublishableKey}}"
+			data-amount="2500"
+			data-name="Web Development Ebook"
+			data-description="Ebook written by Brad Traversy"
+			data-image="/img/marketplace.png"
+			data-locale="auto">
+		</script>
+		<script>
           // Hide default stripe button
           document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
       </script>
       <button type="submit" class="btn btn-outline-dark text-white btn-lg">Purchase For $25</button>
   </form>
-  <div class="pt5 item-a mb5">
-  	<h2 class="w-75 mt3">Retrouvez ici mes différents supports de cours et livres pour apprendre le tamoul</h2>
-  	<p class="f4 w-75 mb5">
-  		Mes cours sont tous au prix de 3 euros chacun, seul le premier est <strong>téléchargeable gratuitement</strong>. Vous êtes donc libre de le prendre et si ma méthode d'apprentissage vous convient, revenez prendre les autres !<br>
-  		Vous pouvez aussi acheter tous les cours de tamoul d'un coup au prix de <strong>25 euros</strong> au lieu de 30&nbsp;!</p>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-b flex justify-center pv4 items-center">
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 1</p>
-  			<h3 class="playfair b lh-title mv0 pv3">Se présenter</h3>
-  			<p class="lora"><a href="files/cours1.pdf" class="i" download>Télécharger</a></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv5 items-center item item-c">
-  		<div class="w-80 tc pv4">
-  			<p class="b ttu f6 sans-serif">Cours 2</p>
-  			<h3 class="playfair b lh-title f1 mv0 pt3">Un matin,<br>direction l'école</h3>
-  			<p class="pb4 pt3 lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-d">
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 3</p>
-  			<h3 class="playfair b lh-title f3 mv0 pv3">Sur le chemin,<br>direction le marché</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
+  <div class="boutique">
+  	<div class="grid">
+  		<div class="pt5 item-a mb5">
+  			<h2 class="w-75 mt3">Retrouvez ici mes différents supports de cours et livres pour apprendre le tamoul</h2>
+  			<p class="f4 w-75 mb5">
+  				Mes cours sont tous au prix de 3 euros chacun, seul le premier est <strong>téléchargeable gratuitement</strong>. Vous êtes donc libre de le prendre et si ma méthode d'apprentissage vous convient, revenez prendre les autres !<br>
+  				Vous pouvez aussi acheter tous les cours de tamoul d'un coup au prix de <strong>25 euros</strong> au lieu de 30&nbsp;!</p>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-b flex justify-center pv4 items-center">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 1</p>
+  					<h3 class="playfair b lh-title mv0 pv3">Se présenter</h3>
+  					<p class="lora"><a href="files/cours1.pdf" class="i" download>Télécharger</a></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv5 items-center item item-c">
+  				<div class="w-80 tc pv4">
+  					<p class="b ttu f6 sans-serif">Cours 2</p>
+  					<h3 class="playfair b lh-title f1 mv0 pt3">Un matin,<br>direction l'école</h3>
+  					<p class="pb4 pt3 lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-d">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 3</p>
+  					<h3 class="playfair b lh-title f3 mv0 pv3">Sur le chemin,<br>direction le marché</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
 
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-e">
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 4</p>
-  			<h3 class="playfair b lh-title f3 mv0 pv3">Cas grammatical</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-f">
-  		<div class="w-90 tc">
-  			<p class="b ttu f6 sans-serif">Cours 5</p>
-  			<h3 class="playfair b lh-title f3 mv0 pv3">Les temps</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-g">
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 6</p>
-  			<h3 class="playfair b lh-title mv0 pv3">Chez le médecin</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-h">
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-e">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 4</p>
+  					<h3 class="playfair b lh-title f3 mv0 pv3">Cas grammatical</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-f">
+  				<div class="w-90 tc">
+  					<p class="b ttu f6 sans-serif">Cours 5</p>
+  					<h3 class="playfair b lh-title f3 mv0 pv3">Les temps</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-g">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 6</p>
+  					<h3 class="playfair b lh-title mv0 pv3">Chez le médecin</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-h">
 
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 7</p>
-  			<h3 class="playfair b lh-title mv0 pv3">Au zoo</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-i">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 7</p>
+  					<h3 class="playfair b lh-title mv0 pv3">Au zoo</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-i">
 
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 8</p>
-  			<h3 class="playfair b lh-title mv0 pv3">Serpent et martre</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-l">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 8</p>
+  					<h3 class="playfair b lh-title mv0 pv3">Serpent et martre</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-l">
 
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 9</p>
-  			<h3 class="playfair b lh-title mv0 pv3">Au restaurant</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
-  		</div>
-  	</div>
-  	<div class="flex justify-center pv4 items-center item item-k">
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 9</p>
+  					<h3 class="playfair b lh-title mv0 pv3">Au restaurant</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="flex justify-center pv4 items-center item item-k">
 
-  		<div class="w-80 tc">
-  			<p class="b ttu f6 sans-serif">Cours 10</p>
-  			<h3 class="playfair b lh-title mv0 pv3">Phrase négative</h3>
-  			<p class="lora"><span class="i">Acheter</span></p>
+  				<div class="w-80 tc">
+  					<p class="b ttu f6 sans-serif">Cours 10</p>
+  					<h3 class="playfair b lh-title mv0 pv3">Phrase négative</h3>
+  					<p class="lora"><span class="i">Acheter</span></p>
+  				</div>
+  			</div>
+  			<div class="item-j flex justify-center nt3 slogan">
+  				<p class="ttu dib  lh-copy mt2"><span class="border-interrupt playfair pv2 tracked">Mes differents cours de tamoul en format PDF</span></p>
+  			</div>
   		</div>
-  	</div>
-  	<div class="item-j flex justify-center nt3 slogan">
-  		<p class="ttu dib  lh-copy mt2"><span class="border-interrupt playfair pv2 tracked">Mes differents cours de tamoul en format PDF</span></p>
   	</div>
   </div>
-</div>
-</div>
 </section>
 
 </div>
