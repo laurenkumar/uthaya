@@ -1,14 +1,20 @@
 const path = require('path');
 const express = require('express');
-const keys = require('./config/keys_dev');
 const webpack = require('webpack');
+const keys = require('./config/keys_dev.js');
+const bodyParser = require('body-parser');
+const nodemailer = require("nodemailer");
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./config/common.js');
+const stripe = require('stripe')(keys.stripeSecretKey);
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 8080 : process.env.PORT;
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
 
 if (isDeveloping) {
 	const compiler = webpack(config);
@@ -27,47 +33,47 @@ if (isDeveloping) {
 
 	app.use(middleware);
 	app.use(webpackHotMiddleware(compiler));
-	app.get('*', function response(req, res) {
-		res.sendFile(path.join(__dirname, 'src/index.html'), {
-			stripePublishableKey: keys.stripePublishableKey
-		});
+	app.get('/', function response(req, res) {
+		res.sendFile(__dirname +"index.html");
+	});
+	app.get('/code',(req,res)=>{
+	    res.json({code: keys.stripePublishableKey});
 	});
 	app.post('/charge', (req, res) => {
-		const amount = 2500;
-
+		const amount = 300;
 		stripe.customers.create({
 			email: req.body.stripeEmail,
 			source: req.body.stripeToken
 		})
 		.then(customer => stripe.charges.create({
 			amount,
-			description: 'Web Development Ebook',
-			currency: 'usd',
+			description: req.body.cours,
+			currency: 'eur',
 			customer: customer.id
 		}))
-		.then(charge => res.render('success'));
+		.then(charge => res.redirect('/'));
 	});
 } else {
 	app.use(express.static(__dirname + '/src'));
-	app.get('*', function response(req, res) {
-		res.sendFile(path.join(__dirname, 'src/index.html'), {
-			stripePublishableKey: keys.stripePublishableKey
-		});
+	app.get('/', function response(req, res) {
+		res.sendFile(__dirname +"index.html");
+	});
+	app.get('/code',(req,res)=>{
+	    res.json({code: keys.stripePublishableKey});
 	});
 	app.post('/charge', (req, res) => {
-		const amount = 2500;
-
+		const amount = 300;
 		stripe.customers.create({
 			email: req.body.stripeEmail,
 			source: req.body.stripeToken
 		})
 		.then(customer => stripe.charges.create({
 			amount,
-			description: 'Web Development Ebook',
-			currency: 'usd',
+			description: req.body.cours,
+			currency: 'eur',
 			customer: customer.id
 		}))
-		.then(charge => res.render('success'));
+		.then(charge => res.redirect('/'));
 	});
 }
 

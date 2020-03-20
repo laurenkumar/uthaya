@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const keys = require('./keys_dev.js');
 
 const __root = path.resolve(__dirname, '../');
 
@@ -74,17 +75,16 @@ module.exports = {
 			from: path.resolve(__root, 'static'),
 		}
 		]),
-		new HtmlWebpackPlugin({
-			template: './src/index.html',
-		}),
+		new HtmlWebpackPlugin(
+			{
+				template: './src/index.html',
+				templateParameters: keys,
+			}
+		),
 		new webpack.ProvidePlugin({
 			'THREE': 'three'
 		}),
 		new webpack.optimize.OccurrenceOrderPlugin(),
-		new HtmlWebpackPlugin({
-			template: './src/index.html',
-			filename: 'index.html'
-		}),
 		new MiniCssExtractPlugin()
 	]
 };
