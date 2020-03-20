@@ -54,7 +54,22 @@ if (isDeveloping) {
 		.then(charge => res.redirect('/'));
 	});
 } else {
-	app.use(express.static(__dirname + '/src'));
+	const compiler = webpack(config);
+	const middleware = webpackMiddleware(compiler, {
+		publicPath: config.output.publicPath,
+		contentBase: 'src',
+		stats: {
+			colors: true,
+			hash: false,
+			timings: true,
+			chunks: false,
+			chunkModules: false,
+			modules: false
+		}
+	});
+
+	app.use(middleware);
+	app.use(webpackHotMiddleware(compiler));
 	app.get('/', function response(req, res) {
 		res.sendFile(__dirname +"index.html");
 	});
