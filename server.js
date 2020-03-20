@@ -10,7 +10,7 @@ const config = require('./config/common.js');
 const stripe = require('stripe')(keys.stripeSecretKey);
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
-const port = isDeveloping ? 8080 : process.env.PORT;
+const port = 8080;
 const app = express();
 
 app.use(bodyParser.json());
