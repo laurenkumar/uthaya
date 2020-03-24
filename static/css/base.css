@@ -4276,6 +4276,62 @@ nav a:not(:last-child) {
   font-family: 'Lora', serif;
 }
 
+/**** transition ***/
+
+@-webkit-keyframes expand {
+  0% {
+    bottom: 16vh;
+    left: 16vh;
+    opacity: 1;
+    background-color: white;
+  }
+  49% {
+    bottom: 14vh;
+    left: 14vh;
+    opacity: 0;
+    background-color: white;
+  }
+  50% {
+    bottom: 16vh;
+    left: 16vh;
+    opacity: 0;
+    background-color: white;
+  }
+  51% {
+    bottom: 16vh;
+    left: 16vh;
+    opacity: 1;
+    background-color: white;
+    
+  }
+  100% {
+    bottom: 18vh;
+    left: 18vh;
+    opacity: 0;
+    background-color: white;
+  }
+}
+
+.transitionType1 {
+  height: 100vh;
+  display: block;
+}
+
+.transitionLayer1 {
+  background: #333640;
+  position: relative;
+  z-index:99;
+}
+
+.transitionLayer2 {
+  background: var(--color-link);
+  position: relative;
+  z-index: 100;
+  top: -100vh;
+}
+
+/***************/
+
 .i {
 	color: var(--color-link);
 }

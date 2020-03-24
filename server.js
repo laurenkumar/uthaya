@@ -34,7 +34,22 @@ if (isDeveloping) {
 	app.use(middleware);
 	app.use(webpackHotMiddleware(compiler));
 	app.get('/', function response(req, res) {
-		res.sendFile(__dirname +"index.html");
+		res.sendFile(__dirname +"/src/index.html");
+	});
+	app.get('/cours', function response(req, res) {
+		res.sendFile(__dirname +"/src/cours.html");
+	});
+	app.get('/traduction', function response(req, res) {
+		res.sendFile(__dirname +"/src/traduction.html");
+	});
+	app.get('/boutique', function response(req, res) {
+		res.sendFile(__dirname +"/src/boutique.html");
+	});
+	app.get('/presentation', function response(req, res) {
+		res.sendFile(__dirname +"/src/presentation.html");
+	});
+	app.get('/ateliers', function response(req, res) {
+		res.sendFile(__dirname +"/src/ateliers.html");
 	});
 	app.get('/code',(req,res)=>{
 		res.json({code: keys.stripePublishableKey});
@@ -117,7 +132,7 @@ if (isDeveloping) {
 	app.use(middleware);
 	app.use(webpackHotMiddleware(compiler));
 	app.get('/', function response(req, res) {
-		res.sendFile(__dirname +"index.html");
+		res.sendFile(__dirname +"/src/index.html");
 	});
 	app.get('/code',(req,res)=>{
 		res.json({code: keys.stripePublishableKey});
