@@ -11,14 +11,14 @@ const keys = require('./keys_dev.js');
 const __root = path.resolve(__dirname, '../');
 
 module.exports = {
-	entry: [
-		path.join(__dirname, '../src/scripts/index.js')
-	],
+	entry: {
+		index: path.join(__dirname, '../src/scripts/index.js'),
+	},
 	output: {
 		path: path.join(__dirname, '/src/'),
 		publicPath: '/',
-		filename: 'scripts/[name].[chunkhash].js',
-		chunkFilename: 'scripts/[name].[chunkhash].js',
+		filename: 'scripts/[name].js',
+		chunkFilename: 'scripts/[name].js',
 	},
 	target: "web",
 	module: {

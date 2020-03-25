@@ -26,6 +26,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="css/base.css" />
 	<link rel="stylesheet" type="css" href="css/demo1.css" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 	<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 </head>
 <body class="demo-1">
@@ -52,7 +53,7 @@
 		<a href="/boutique" class="header-link corner dynamic-link _moveTo cta" data-href="boutique" rel="prefetch">Boutique</a>
 	</div>
 
-	<div class="feature pt-page-5" id="ateliers" data-step="e">
+	<div class="feature pt-page-5" id="ateliers" data-step="e" id="swup">
 		<div style="padding: 4vw;">
 			<h3>Voici les différents ateliers que j'anime mensuellement</h3>
 			<p>Vous voulez participer à l'un d'eux où inscrire votre enfant à un de ces ateliers, alors <a mailto="sopika16@hotmail.fr">contactez moi</a></p>
@@ -88,10 +89,62 @@
 		</div>
 	</div>
 
-	<div class="transitionType1">
-		<div class="transitionLayer1"></div>
-		<div class="transitionLayer2"></div>
-	</div>
+	<script>
+		const can = document.querySelectorAll("img");
+
+		const randomX = random(10, 20);
+		const randomY = random(20, 30);
+		const randomDelay = random(0, 1);
+		const randomTime = random(3, 5);
+		const randomTime2 = random(5, 10);
+		const randomAngle = random(8, 12);
+
+		TweenLite.set(can, {
+			x: randomX(-1),
+			y: randomX(1),
+			rotation: randomAngle(-1)
+		});
+
+		moveX(can, 1);
+		moveY(can, -1);
+		rotate(can, 1);
+
+		function rotate(target, direction) {
+
+			TweenLite.to(target, randomTime2(), {
+				rotation: randomAngle(direction),
+    // delay: randomDelay(),
+    ease: Sine.easeInOut,
+    onComplete: rotate,
+    onCompleteParams: [target, direction * -1]
+});
+		}
+
+		function moveX(target, direction) {
+
+			TweenLite.to(target, randomTime(), {
+				x: randomX(direction),
+				ease: Sine.easeInOut,
+				onComplete: moveX,
+				onCompleteParams: [target, direction * -1]
+			});
+		}
+
+		function moveY(target, direction) {
+
+			TweenLite.to(target, randomTime(), {
+				y: randomY(direction),
+				ease: Sine.easeInOut,
+				onComplete: moveY,
+				onCompleteParams: [target, direction * -1]
+			});
+		}
+
+		function random(min, max) {
+			const delta = max - min;
+			return (direction = 1) => (min + delta * Math.random()) * direction;
+		}
+	</script>
 
 	<noscript><div class="noscript">Veuillez activer Javascript pour le bon fonctionnement du site</div></noscript>
 

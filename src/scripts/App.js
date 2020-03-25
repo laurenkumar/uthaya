@@ -1,9 +1,7 @@
 import WebGLView from './webgl/WebGLView';
 import GUIView from './gui/GUIView';
-import barba from '@barba/core';
 import "intersection-observer";
 import TextOnPath from "./utils/textOnPath";
-
 
 export default class App {
 
@@ -37,28 +35,7 @@ export default class App {
 		const el = this.webgl.renderer.domElement;
 		el.addEventListener('click', this.click.bind(this));
 
-		const toogleLinks = document.querySelectorAll('.dynamic-link');
-		const toogleBlocks = document.querySelectorAll('.feature');
-		const transition = document.querySelectorAll('.cta');
-
-		var tl = new TimelineMax({
-			paused: true
-		});
-
-		tl.to('.transitionLayer1', 2, {height: '100vh', ease: Expo.easeOut}, 0)
-		.to('.transitionLayer1', 1, {height: '0vh', ease: Expo.easeOut}, 2);
-
-		tl.to('.transitionLayer2', 2, {height: '100vh', ease: Expo.easeOut}, 0)
-		.to('.transitionLayer2', 4, {height: '40vh', ease: Expo.easeOut}, 2);
-
-		Array.from(toogleLinks).forEach(link => {
-			link.addEventListener('click', function(event) {
-				tl.restart();
-			}, false);
-		});
-
 		[...document.querySelectorAll('svg.svgtext')].forEach(el => new TextOnPath(el));
-
 	}
 
 	animate() {
