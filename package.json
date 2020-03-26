@@ -26,6 +26,7 @@
     "browser-detect": "^0.2.28",
     "cross-env": "^1.0.7",
     "domready": "^1.0.8",
+    "ejs": "^3.0.1",
     "express-handlebars": "^3.1.0",
     "fsevents": "^2.1.2",
     "fullpage.js": "^3.0.8",

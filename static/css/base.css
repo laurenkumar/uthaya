@@ -4028,6 +4028,10 @@ header {
     background: white;
 }
 
+#ateliers > div {
+    margin-top: 4vw;
+}
+
 nav a:not(:last-child) {
 	margin-right: 0.2em;
 }
@@ -4035,8 +4039,6 @@ nav a:not(:last-child) {
 #cours .scroll__container {
 	margin-left: 1em;
 }
-
-/**** classroom */
 
 /**********************/
 
@@ -4095,6 +4097,10 @@ nav a:not(:last-child) {
 }
 
 @media (max-width: 425px) {
+  #ateliers > div {
+    margin-top: 21vw;
+  }
+
 	.heading {
 		position: relative;
     	top: 95px !important;
@@ -4236,22 +4242,33 @@ nav a:not(:last-child) {
 }
 
 #ateliers h4, #ateliers h3 {
-	font-size: 4em;
+	font-size: 2em;
 	margin-top: 0em;
-    margin-bottom: 0em;
+  margin-bottom: 0em;
 }
 
 .ateliers-p {
 	display: inline-block;
-    width: 50%;
-    vertical-align: top;
-    padding: 4vw;
-    font-size: xx-large;
-    text-align: justify;
+  width: 50%;
+  vertical-align: top;
+  padding: 4vw;
+  font-size: x-large;
+  text-align: justify;
 }
 
 .ateliers-img {
-	display: inline-block;
+  display: inline-block;
+}
+
+@media (max-width: 425px) {
+  .ateliers-p {
+    display: block;
+    width: 85%;
+  }
+  .ateliers-img {
+    display: block;
+    width: 75%;
+  }
 }
 
 .item-c {

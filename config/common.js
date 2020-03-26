@@ -12,15 +12,12 @@ const __root = path.resolve(__dirname, '../');
 
 module.exports = {
 	entry: {
-		index: path.join(__dirname, '../src/scripts/index.js'),
+		index: [path.join(__dirname, '../src/scripts/index.js')],
+		traduction: [path.join(__dirname, '../src/scripts/traduction.js')],		
 	},
 	output: {
-		path: path.join(__dirname, '/src/'),
-		publicPath: '/',
 		filename: 'scripts/[name].js',
-		chunkFilename: 'scripts/[name].js',
 	},
-	target: "web",
 	module: {
 		rules: [
 		{
@@ -77,8 +74,16 @@ module.exports = {
 		]),
 		new HtmlWebpackPlugin(
 			{
+				filename: 'index.html',
+				chunks: ['index'],
 				template: './src/index.html',
-				templateParameters: keys,
+			}
+		),
+		new HtmlWebpackPlugin(
+			{
+				filename: 'traduction.html',
+				chunks: ['traduction', 'index'],
+				template: './src/traduction.html',
 			}
 		),
 		new webpack.ProvidePlugin({

@@ -15,32 +15,27 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static('/src/scripts/'))
+app.engine('html', require('ejs').renderFile);
 
 if (isDeveloping) {
 	const compiler = webpack(config);
 	const middleware = webpackMiddleware(compiler, {
-		publicPath: config.output.publicPath,
-		contentBase: 'src',
-		stats: {
-			colors: true,
-			hash: false,
-			timings: true,
-			chunks: false,
-			chunkModules: false,
-			modules: false
-		}
+		contentBase: 'src'
 	});
 
 	app.use(middleware);
-	app.use(webpackHotMiddleware(compiler));
+	app.use(webpackHotMiddleware(compiler, {
+		  publicPath : config.output.publicPath,
+	}));
 	app.get('/', function response(req, res) {
-		res.sendFile(__dirname +"/src/index.html");
+		res.render(__dirname +"/src/index.html");
 	});
 	app.get('/cours', function response(req, res) {
 		res.sendFile(__dirname +"/src/cours.html");
 	});
 	app.get('/traduction', function response(req, res) {
-		res.sendFile(__dirname +"/src/traduction.html");
+		res.render(__dirname +"/src/traduction.html");
 	});
 	app.get('/boutique', function response(req, res) {
 		res.sendFile(__dirname +"/src/boutique.html");
@@ -117,16 +112,7 @@ if (isDeveloping) {
 } else {
 	const compiler = webpack(config);
 	const middleware = webpackMiddleware(compiler, {
-		publicPath: config.output.publicPath,
 		contentBase: 'src',
-		stats: {
-			colors: true,
-			hash: false,
-			timings: true,
-			chunks: false,
-			chunkModules: false,
-			modules: false
-		}
 	});
 
 	app.use(middleware);
