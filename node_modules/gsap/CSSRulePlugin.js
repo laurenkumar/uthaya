@@ -1,14 +1,16 @@
 /*!
- * VERSION: 0.6.7
- * DATE: 2018-08-27
+ * VERSION: 0.6.8
+ * DATE: 2019-02-22
  * UPDATES AND DOCS AT: http://greensock.com
  *
- * @license Copyright (c) 2008-2018, GreenSock. All rights reserved.
+ * @license Copyright (c) 2008-2019, GreenSock. All rights reserved.
  * This work is subject to the terms at http://greensock.com/standard-license or for
  * Club GreenSock members, the software agreement that was issued with your membership.
  * 
  * @author: Jack Doyle, jack@greensock.com
  */
+/* eslint-disable */
+
 import TweenLite, { _gsScope, globals, TweenPlugin } from "./TweenLite.js";
 import CSSPlugin from "./CSSPlugin.js";
 
@@ -25,7 +27,7 @@ _gsScope._gsDefine("plugins.CSSRulePlugin", ["plugins.TweenPlugin","TweenLite","
 
 		p._propName = "cssRule";
 		p.constructor = CSSRulePlugin;
-		CSSRulePlugin.version = "0.6.7";
+		CSSRulePlugin.version = "0.6.8";
 		CSSRulePlugin.API = 2;
 
 		/**
@@ -91,7 +93,12 @@ _gsScope._gsDefine("plugins.CSSRulePlugin", ["plugins.TweenPlugin","TweenLite","
 		// @private gets called every time the tween updates, passing the new ratio (typically a value between 0 and 1, but not always (for example, if an Elastic.easeOut is used, the value can jump above 1 mid-tween). It will always start and 0 and end at 1.
 		p.setRatio = function(v) {
 			_superSetRatio.call(this, v);
-			this._ss.cssText = this._proxy.cssText;
+			var proxy = this._proxy,
+				ss = this._ss,
+				i = proxy.length;
+			while (--i > -1) {
+				ss[proxy[i]] = proxy[proxy[i]];
+			}
 		};
 		
 		
