@@ -15,7 +15,7 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./config/common.js --progress",
+    "build": "webpack --config config/common.js -p & cross-env NODE_ENV=production node server",
     "start": "webpack --config config/common.js -p & cross-env NODE_ENV=production node server",
     "production": "webpack --config config/common.js -p & cross-env NODE_ENV=production node server"
   },
@@ -38,6 +38,7 @@
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
     "jquery-bridget": "^2.0.1",
+    "jquery-scrollify": "^1.0.20",
     "jquery-ui": "^1.12.1",
     "jsdom": "^16.2.1",
     "locomotive-scroll": "^3.3.11",
