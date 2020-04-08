@@ -16,7 +16,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "webpack --config config/common.js -p & cross-env NODE_ENV=production node server",
-    "start": "webpack --config config/common.js -p & cross-env NODE_ENV=production node server",
+    "start": "webpack --progress --config config/common.js -p & cross-env NODE_ENV=production node server",
     "production": "webpack --config config/common.js -p & cross-env NODE_ENV=production node server"
   },
   "dependencies": {
@@ -25,6 +25,7 @@
     "@swup/slide-theme": "^1.0.5",
     "body-parser": "^1.19.0",
     "browser-detect": "^0.2.28",
+    "compression": "^1.7.4",
     "consolidate": "^0.15.1",
     "cross-env": "^1.0.8",
     "domready": "^1.0.8",
@@ -76,9 +77,11 @@
     "html-webpack-plugin": "^3.2.0",
     "imports-loader": "^0.8.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "raw-loader": "^0.5.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^0.21.0",
+    "terser-webpack-plugin": "^2.3.5",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.10.3",

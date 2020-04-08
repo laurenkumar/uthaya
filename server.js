@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser');
+var compression = require('compression')
 const keys = require('./config/keys_dev.js');
 const nodemailer = require('nodemailer');
 const stripe = require('stripe')(keys.stripeSecretKey);
@@ -23,6 +24,7 @@ app.locals.reload = true;
 app.use(express.static(path.join(__dirname, 'public')));
 require('./server/routes')(app);
 
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
