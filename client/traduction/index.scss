@@ -527,8 +527,9 @@ main {
 }
 
 /* Content */
-.content {
+main .content {
     padding: 3em 0;
+    width: 100% !important;
 }
 
 .content--grid {

@@ -1,4 +1,6 @@
 require("./index.scss");
+require("../common/common.js");
+
 {
 	class ImgItem {
 		constructor(el) {

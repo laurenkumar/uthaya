@@ -18,10 +18,9 @@ $(function () {
 
 	});
 
-})
+});
 
 $(".menu__item-link").click(function(e) {
 	e.preventDefault();
-	console.log($(this).attr("href"))
 	$.scrollify.move($(this).attr("href"));
 });
