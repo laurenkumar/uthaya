@@ -29,7 +29,7 @@
     <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
 </head>
 <body class="demo-1">
-    <header>
+    <header class="scrolls_to">
         <div class="header-side">
             <a href="/" class="logo dynamic-link cta" rel="noopener">
                 <div style="position:relative;display:inline-block;" class="SplitClass">Uthaya</div> <br>
@@ -48,8 +48,8 @@
     </header>
 
     <div class="corner__link">
-        <a href="/ateliers" class="header-link corner dynamic-link _moveTo cta" data-href="ateliers" rel="prefetch">Ateliers</a>
-        <a href="/boutique" class="header-link corner dynamic-link _moveTo cta" data-href="boutique" rel="prefetch">Boutique</a>
+        <a href="/ateliers" class="header-link corner dynamic-link _moveTo cta scrolls_to" data-href="ateliers" rel="prefetch">Ateliers</a>
+        <a href="/boutique" class="header-link corner dynamic-link _moveTo cta scrolls_to" data-href="boutique" rel="prefetch">Boutique</a>
     </div>
 
     <nav class="cours">
@@ -59,7 +59,7 @@
         <div class="content_cours">
             <section class="scrolls active">
                 <h1 class="stroke__text">Cours de tamoul par une prof. diplômée en Littérature Tamoul</h1>
-                <nav class="menu">
+                <nav class="menu scrolls_to">
                     <div class="menu__item">
                         <a class="menu__item-link" href="#pedagogie">Pédagogie</a>
                         <img class="menu__item-img" src="/images/pedagogie.png" alt="pédagogie"/>

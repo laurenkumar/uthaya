@@ -4,6 +4,33 @@ main {
     overflow: visible !important;
 }
 
+/* animation */
+
+.scrolls h1, .scrolls p, .scrolls h1, .scrolls ul,  .scrolls h3, .scrolls a{
+    animation: heading-in 2.8s forwards;
+    animation-timing-function: cubic-bezier(.72,.33,.37,.66);
+    animation-delay: 0;
+}
+
+@keyframes heading-in {
+    0% {
+        opacity: 0;
+        transform:translateY(-50px)
+    }
+
+    50% {
+        opacity: 0;
+        transform:translateY(-50px) 
+    }
+
+    100% {
+        opacity: 1;
+        transform:translateY(0px)    
+    }
+}
+
+/* */
+
 .item:hover {
     background-color: unset;
     color: var(--color-link);
@@ -15,38 +42,6 @@ main {
     width: 0;
     height: 0;
     pointer-events: none;
-}
-
-.js .loading::before {
-    content: '';
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #efeff2;
-}
-
-.js .loading::after {
-    content: '';
-    position: fixed;
-    z-index: 1001;
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    margin: -25px 0 0 -25px;
-    pointer-events: none;
-    border-radius: 50%;
-    background: #dcdcde;
-    animation: loaderAnim 0.8s ease-out infinite alternate forwards;
-}
-
-@keyframes loaderAnim {
-    to {
-        transform: scale3d(0.5,0.5,1);
-    }
 }
 
 /*** traduction ***/

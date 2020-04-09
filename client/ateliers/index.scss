@@ -1,5 +1,32 @@
 @import '../common/common';
 
+/* animation */
+
+.scrolls p, .scrolls ul,  .scrolls h3, .scrolls a, .scrolls h2{
+    animation: heading-in 2.8s forwards;
+    animation-timing-function: cubic-bezier(.72,.33,.37,.66);
+    animation-delay: 0;
+}
+
+@keyframes heading-in {
+    0% {
+        opacity: 0;
+        transform:translateY(-50px)
+    }
+
+    50% {
+        opacity: 0;
+        transform:translateY(-50px) 
+    }
+
+    100% {
+        opacity: 1;
+        transform:translateY(0px)    
+    }
+}
+
+/* */
+
 html.has-scroll-smooth {
   overflow: hidden; }
 

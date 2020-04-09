@@ -5,6 +5,33 @@
     font-size: 14px;
 }
 
+/* animation */
+
+.scrolls h1, .scrolls p, .scrolls h1, .scrolls ul,  .scrolls h3, .scrolls a{
+    animation: heading-in 2.8s forwards;
+    animation-timing-function: cubic-bezier(.72,.33,.37,.66);
+    animation-delay: 0;
+}
+
+@keyframes heading-in {
+    0% {
+        opacity: 0;
+        transform:translateY(-50px)
+    }
+
+    50% {
+        opacity: 0;
+        transform:translateY(-50px) 
+    }
+
+    100% {
+        opacity: 1;
+        transform:translateY(0px)    
+    }
+}
+
+/* */
+
 @media screen and (min-width: 1011px)
 {
     .pt5.item-a.mb5 {

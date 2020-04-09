@@ -6,6 +6,12 @@ a {
 	outline: none;
 }
 
+.scrolls_to {
+    animation: heading-in 2.8s forwards;
+    animation-timing-function: cubic-bezier(.72,.33,.37,.66);
+    animation-delay: 0;
+}
+
 a:hover,
 a:focus {
 	color: var(--color-link);
