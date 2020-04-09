@@ -1,11 +1,14 @@
 const bodyParser = require('body-parser');
 var compression = require('compression')
 const keys = require('./config/keys_dev.js');
+const robots = require('express-robots-txt');
 const nodemailer = require('nodemailer');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('./config/common.js');
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { createGzip } = require('zlib');
 const port = 8080;
 var express = require('express'),
 path = require('path'),
@@ -22,6 +25,8 @@ app.locals.env = process.env.NODE_ENV || 'dev';
 app.locals.reload = true;
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(robots({UserAgent: '*', Disallow: '/'}, __dirname, 'robots.txt'));
+
 require('./server/routes')(app);
 
 app.use(compression());
@@ -29,6 +34,40 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+ 
+let sitemap;
+ 
+app.get('/sitemap.xml', function(req, res) {
+  res.header('Content-Type', 'application/xml');
+  res.header('Content-Encoding', 'gzip');
+  // if we have a cached entry send it
+  if (sitemap) {
+    res.send(sitemap)
+    return
+  }
+ 
+  try {
+    const smStream = new SitemapStream({ hostname: 'https://uthaya.fr' })
+    const pipeline = smStream.pipe(createGzip())
+ 
+    // pipe your entries or directly write them.
+    smStream.write({ url: '/'})
+    smStream.write({ url: '/cours'})
+    smStream.write({ url: '/traduction'})    // changefreq: 'weekly',  priority: 0.5
+    smStream.write({ url: '/boutique'})
+    smStream.write({ url: '/ateliers'})
+    smStream.write({ url: '/presentation'})
+    smStream.end()
+ 
+    // cache the response
+    streamToPromise(pipeline).then(sm => sitemap = sm)
+    // stream write the response
+    pipeline.pipe(res).on('error', (e) => {throw e})
+  } catch (e) {
+    console.error(e)
+    res.status(500).end()
+  }
+})
 
 app.post('/charge', (req, res) => {
 	const amount = 300;
