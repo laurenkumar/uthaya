@@ -532,6 +532,12 @@ main .content {
     width: 100% !important;
 }
 
+.presta {
+    margin-left: 2rem;
+    padding-top: 55px;
+    padding-left: 2rem;
+}
+
 .content--grid {
     display: grid;
     padding: 10vh 8vw;
@@ -685,6 +691,7 @@ main .content {
 }
 
 .item__title {
+    mix-blend-mode: difference;
     font-size: 1.165em;
     font-weight: 600;
     width: 100%;

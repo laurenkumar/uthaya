@@ -3,8 +3,8 @@ import { TweenLite } from 'gsap/TweenMax';
 
 import InteractiveControls from './controls/InteractiveControls';
 import Particles from './particles/Particles';
-import image from "../../sample-01.png";
-import image2 from "../../sample-02.png";
+import image2 from "../../image2.png";
+import image1 from "../../image1.png";
 
 const glslify = require('glslify');
 
@@ -13,8 +13,8 @@ export default class WebGLView {
 	constructor(app) {
 		this.app = app;
 		this.samples = [
-			image,
 			image2,
+			image1,
 		];
 
 		this.initThree();

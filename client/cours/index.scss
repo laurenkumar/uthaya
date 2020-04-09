@@ -79,6 +79,7 @@ a:focus {
 
 .menu__item-link::before {
 	all: initial;
+    color: var(--color-link);
 	font-family: sofia-pro, sans-serif;
 	counter-increment: menu;
 	content:  counter(menu);
@@ -117,10 +118,14 @@ nav a:not(:last-child) {
 
 /* Make sure 3 items are visible in the viewport by setting suitable font size. */
 
+#cours li svg, #cours li p {
+    display: inline-block;
+}
+
 .marquee {
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: -32px;
 	width: var(--marquee-width);
 	overflow: hidden;
 	pointer-events: none;
@@ -204,6 +209,30 @@ nav a:not(:last-child) {
 	.frame a {
 		pointer-events: auto;
 	}
+}
+
+@media screen and (max-width: 648px) {
+    .container .image, .background {
+        display: none !important;
+    }
+
+    .container .items {
+        padding-top: 100px;
+        width: 75% !important;
+    }
+}
+
+@media screen and (max-width: 425px)
+{
+    .menu__item {
+        padding: 0 !important;
+    }
+    h1.stroke__text {
+        font-size: 1.2rem !important;
+    }
+    .container .items {
+        width: 95%!important;
+    }
 }
 
 /* new */
