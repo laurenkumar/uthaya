@@ -61,7 +61,7 @@ a:focus {
 	--offset: 20vw;
 	--move-initial: calc(-25% + var(--offset));
 	--move-final: calc(-50% + var(--offset));
-	--item-font-size: 10vw;
+	--item-font-size: 6vw;
 	counter-reset: menu;
 }
 
@@ -161,11 +161,20 @@ nav a:not(:last-child) {
 
 .menu__item-link,
 .marquee span {
-	white-space: nowrap;
 	font-size: var(--item-font-size);
-	padding: 0 1vw;
-	font-weight: 900;
-	line-height: 1.15;
+    white-space: nowrap;
+    padding: 0 1vw;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 425px) {
+    .marquee span, .menu__item-link {
+        font-size: 8vw;
+    }
+    #cours {
+        margin-left: 2em;
+        padding: 4em 4.5em 4.5em 0em;
+    }
 }
 
 .marquee span {
@@ -217,13 +226,17 @@ nav a:not(:last-child) {
 	}
 }
 
+.items .stroke__text {
+    text-align: justify !important;
+}
+
 @media screen and (max-width: 648px) {
     .container .image, .background {
         display: none !important;
     }
 
     .container .items {
-        padding-top: 100px;
+        padding-top: 145px !important;
         width: 75% !important;
     }
 }
@@ -237,6 +250,7 @@ nav a:not(:last-child) {
         font-size: 1.2rem !important;
     }
     .container .items {
+        padding-top: 40vw;
         width: 95%!important;
     }
 }
@@ -573,6 +587,7 @@ small,
 
     .items {
         height: auto;
+        padding-top: 4vw;
         width: 50%;
 
     }

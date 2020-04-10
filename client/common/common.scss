@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -3467,7 +3469,8 @@ body {
 	--color-link-hover: #fff;
 	color: var(--color-text);
 	background-color: var(--color-bg);
-	font-family: Futura, "futura-pt", Arial, sans-serif;
+  letter-spacing: normal;
+	font-family: 'Oxygen', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -3603,7 +3606,7 @@ div.container {
 
 #circle {overflow: hidden; text-align: right;}
 
-#circle text { font-family: 'Helvetica Neue', Arial; font-size: 16px; font-weight: bold; }
+#circle text { font-family: sans-serif; font-size: 16px; font-weight: bold; }
 
 #circle svg { 
     width: 100%;
@@ -3698,11 +3701,10 @@ div.container {
 
 #cours, #presentation {
 	text-align: justify;
-    padding-top: 6.5em;
+    padding-top: 1.5em;
     padding-left: 2em;
     line-height: 1.5;
     padding-right: 4.5em;
-    padding-bottom: 4.5em;
 }
 
 #presentation img {
@@ -3841,11 +3843,13 @@ div.wrap {
 
 .stroke__text {
 	color: transparent;
-	text-align: center;
-	line-height: 1;
-	font-size: 2rem;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: white;
+    letter-spacing: normal;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 1;
+    font-size: 2.4rem;
+    -webkit-text-stroke-width: .1px;
+    -webkit-text-stroke-color: #fff;
 }
 
 .stroke__text:hover {
@@ -3894,12 +3898,13 @@ div.wrap {
 .header-side {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    word-spacing: 5px;
+    justify-content: space-evenly;
 }
 
 .logo {
-    font-family: proxima-nova,Arial Black,sans-serif;
-    font-size: .83333vw;
+    font-family: sans-serif;
+    font-size: 1.83333vw;
     font-weight: 900;
 }
 
@@ -3994,7 +3999,7 @@ h1, ul {
     z-index: 199;
 }
 header {
-    top: 5.208334vw;
+    top: 3.208334vw;
     display: flex;
     align-items: center;
     justify-content: space-between;

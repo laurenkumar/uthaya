@@ -73,10 +73,6 @@ main {
     min-width: 455px;
 }
 
-.trad_panel.trad_html {
-    top: -20px;
-}
-
 .trad_panel.trad_css {
     left: 80px;
     top: 130px;
@@ -523,20 +519,18 @@ main {
 
 /* Content */
 main .content {
-    padding: 3em 0;
     width: 100% !important;
 }
 
 .presta {
-    margin-left: 2rem;
-    padding-top: 55px;
-    padding-left: 2rem;
+    padding: 8vh 8vw 0vh 8vw;
 }
 
 .content--grid {
     display: grid;
     padding: 10vh 8vw;
-
+    justify-items: center;
+    align-items: baseline;
     grid-template-columns: 33% 33% 33%;
 }
 
