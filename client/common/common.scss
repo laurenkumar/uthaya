@@ -3842,7 +3842,7 @@ div.wrap {
 }
 
 .stroke__text {
-	color: transparent;
+	color: white;
     letter-spacing: normal;
     font-weight: bolder;
     text-align: center;
@@ -4113,9 +4113,6 @@ nav a:not(:last-child) {
 {
 	header {
     	top: 50px;
-	}
-	.logo {
-    	font-size: 10px;
 	}
 }
 
