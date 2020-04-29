@@ -6,8 +6,8 @@ a {
 	outline: none;
 }
 
-.scrolls_to {
-    animation: heading-in 2.8s forwards;
+.scrolls p, .scrolls ul,  .scrolls h3, .scrolls h2, .scrolls h1, .scrolls a{
+    animation: heading-in 1s forwards;
     animation-timing-function: cubic-bezier(.72,.33,.37,.66);
     animation-delay: 0;
 }
@@ -463,23 +463,23 @@ small,
 .active {
 
     .background {
-        animation: back 2.2s forwards;
+        animation: back 1.2s forwards;
         animation-delay: 0;
     }
     img{
-        animation: image-in 2.8s forwards;
+        animation: image-in 1.8s forwards;
         animation-delay: 0;
     }
     h2 {
-        animation: heading-in 2.8s forwards;
+        animation: heading-in 1.8s forwards;
         animation-delay: 0;
     }
     p {
-        animation: heading-in 3.4s forwards;
+        animation: heading-in 2.4s forwards;
         animation-delay: 0;
     }
     button {
-        animation: heading-in 3.8s forwards;
+        animation: heading-in 2.8s forwards;
         animation-delay: 0s;
     }
 }

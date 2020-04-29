@@ -21,8 +21,8 @@
 
 /* animation */
 
-.scrolls h1, .scrolls p, .scrolls h1, .scrolls ul,  .scrolls h3, .scrolls a{
-    animation: heading-in 2.8s forwards;
+.scrolls p, .scrolls ul,  .scrolls h3, .scrolls h2, .scrolls h1{
+    animation: heading-in 1s forwards;
     animation-timing-function: cubic-bezier(.72,.33,.37,.66);
     animation-delay: 0;
 }
@@ -34,7 +34,7 @@
     }
 
     50% {
-        opacity: 0;
+        opacity: 0.5;
         transform:translateY(-50px) 
     }
 

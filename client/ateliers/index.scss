@@ -2,8 +2,8 @@
 
 /* animation */
 
-.scrolls p, .scrolls ul,  .scrolls h3, .scrolls a, .scrolls h2{
-    animation: heading-in 2.8s forwards;
+.scrolls p, .scrolls ul,  .scrolls h3, .scrolls h2, .scrolls h1{
+    animation: heading-in 1s forwards;
     animation-timing-function: cubic-bezier(.72,.33,.37,.66);
     animation-delay: 0;
 }
@@ -15,7 +15,7 @@
     }
 
     50% {
-        opacity: 0;
+        opacity: 0.5;
         transform:translateY(-50px) 
     }
 
@@ -30,6 +30,9 @@
 html.has-scroll-smooth {
   overflow: hidden; }
 
+.approach-item h2 {
+  margin-bottom: 1em;
+}
 html.has-scroll-dragging {
   -webkit-user-select: none;
   -moz-user-select: none;
