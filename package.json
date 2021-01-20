@@ -35,7 +35,7 @@
     "fsevents": "^2.1.2",
     "fullpage.js": "^3.0.8",
     "glsl-noise": "0.0.0",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "imagesloaded": "^4.1.4",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
