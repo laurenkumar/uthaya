@@ -44,7 +44,7 @@
     "jquery-ui": "^1.12.1",
     "jsdom": "^16.2.1",
     "locomotive-scroll": "^3.3.11",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemailer": "^6.4.6",
     "resolve-url-loader": "^3.1.1",
     "rimraf": "^2.4.3",
