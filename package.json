@@ -30,7 +30,7 @@
     "cross-env": "^1.0.8",
     "domready": "^1.0.8",
     "ejs": "^3.0.1",
-    "express-handlebars": "^3.1.0",
+    "express-handlebars": "^5.3.1",
     "express-robots-txt": "^0.4.1",
     "fsevents": "^2.1.2",
     "fullpage.js": "^3.0.8",
